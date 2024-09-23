@@ -4,6 +4,8 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Praktikum Modul 1 - HTML CSS</title>
+		<script src="https://kit.fontawesome.com/1f94ee29e7.js" crossorigin="anonymous"></script>
+
 		<link rel="stylesheet" href="styles.css" />
 	</head>
 	<body>
@@ -41,12 +43,14 @@
 
 		<!-- Product Section -->
 		<section class="product" id="product">
-			<h2>Our Products</h2>
+			<div class="product-head">
+				<h2>Our Products</h2>
+				<a href="produk.html">Show more products</a>
+			</div>
 
 			<div class="product-container">
 				<div class="product-card">
 					<img src="https://picsum.photos/id/133/300/300" alt="gambar1" />
-
 					<h3>Product 1</h3>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, fugit!</p>
 				</div>
@@ -65,7 +69,6 @@
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus, fugit!</p>
 				</div>
 			</div>
-			<button><a href="produk.html">More</a></button>
 		</section>
 
 		<!-- About Us Section -->
@@ -75,21 +78,21 @@
 
 			<div class="about-us-container">
 				<div class="about-us-card">
-					<img src="icon1.png" alt="icon1" />
+					<i class="fa-solid fa-notes-medical"></i>
 
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, dignissimos!</p>
+					<p>Menyediakan minuman yang mendukung gaya hidup sehat.</p>
 				</div>
 
 				<div class="about-us-card">
-					<img src="icon1.png" alt="icon1" />
+					<i class="fa-solid fa-leaf"></i>
 
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, dignissimos!</p>
+					<p>Menggunakan bahan-bahan alami terbaik tanpa bahan kimia berbahaya.</p>
 				</div>
 
 				<div class="about-us-card">
-					<img src="icon1.png" alt="icon1" />
+					<i class="fa-solid fa-recycle"></i>
 
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, dignissimos!</p>
+					<p>Menerapkan praktik ramah lingkungan dalam proses produksi dan kemasan.</p>
 				</div>
 			</div>
 		</section>
@@ -100,25 +103,25 @@
 
 			<div class="testimoni-container">
 				<div class="testimoni-card">
-					<img src="https://i.pravatar.cc/500?img=52" alt="" />
+					<img src="assets/ristek.jpg" alt="" />
 
-					<h3>John Doe</h3>
+					<h3>Hafiz "Ristek" Rendy</h3>
 					<h4>Pengangguran, 20 Tahun</h4>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, magni.</p>
 				</div>
 
 				<div class="testimoni-card">
-					<img src="https://i.pravatar.cc/500?img=59" alt="" />
+					<img src="assets/epal.jpg" alt="" />
 
-					<h3>John Doe</h3>
+					<h3>Fazrul IC Declare</h3>
 					<h4>Pengangguran, 20 Tahun</h4>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, magni.</p>
 				</div>
 
 				<div class="testimoni-card">
-					<img src="https://i.pravatar.cc/500?img=68" alt="" />
+					<img src="assets/sighra2.jpg" alt="" />
 
-					<h3>John Doe</h3>
+					<h3>Sighra Dagri</h3>
 					<h4>Pengangguran, 20 Tahun</h4>
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, magni.</p>
 				</div>
@@ -127,11 +130,11 @@
 
 		<!-- Footer -->
 		<footer>
-			<h5>&copy; 2024 Pemweb</h5>
-	
+			<h5>&copy; 2024 Pemweb EZ</h5>
+
 			<div class="socmed-icon">
-				<a href="instagram.com"><img class="footer-logo2" src="assets/IG-Logo.png" alt="ig" /></a>
-				<a href="twitter.com"><img class="footer-logo" src="assets/X-Logo.png" alt="x" /></a>
+				<a href="instagram.com"><i class="fa-brands fa-instagram"></i></a>
+				<a href="twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
 			</div>
 		</footer>
 	</body>
