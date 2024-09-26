@@ -16,6 +16,11 @@
 	text-decoration: none;
 }
 
+.logo img{
+	width: 75px;
+	height: 75px;
+}
+
 body {
 	padding: 5rem 0 0 0;
 }
