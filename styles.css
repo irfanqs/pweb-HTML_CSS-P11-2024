@@ -5,7 +5,8 @@
 	--secondary-color: #ffffff; /*button text*/
 	--background-color: #ffffff;
 	--text-color: #828282;
-	--accent-color: #f58634;
+	--accent-color: #73ae37;
+	--accent-color-hover: #5c8a2c;
 }
 
 * {
@@ -17,8 +18,7 @@
 }
 
 .logo img {
-	width: 75px;
-	height: 75px;
+	width: 5rem;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
 }
 
 section {
-	margin-top: 2rem;
+	margin-top: 2.5rem;
 	padding: 0 4rem;
 }
 
@@ -45,6 +45,22 @@ nav {
 	width: 100%;
 	padding: 1.5rem 4rem;
 	color: var(--primary-color);
+}
+
+button:hover {
+	background-color: var(--accent-color-hover);
+}
+
+.hamburger {
+	display: none;
+	cursor: pointer;
+	background: none;
+	border: none;
+	font-size: 1.5rem;
+}
+
+.hamburger:hover {
+	background-color: var(--background-color);
 }
 
 .navbar {
@@ -66,10 +82,6 @@ button {
 	border: none;
 	color: var(--secondary-color);
 	cursor: pointer;
-}
-
-button:hover {
-	background-color: #d9752d;
 }
 
 .hero {
@@ -96,7 +108,7 @@ button:hover {
 .mini-box {
 	background-color: var(--accent-color);
 	height: 0.5rem;
-	width: 20%;
+	width: 30%;
 	margin-right: 2rem;
 }
 
@@ -156,18 +168,27 @@ h2 {
 	gap: 2rem;
 }
 
+.about h2 {
+	margin-bottom: 1rem;
+}
+
 .product-card {
 	background-color: var(--background-color);
 	border-radius: 10px;
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	overflow: hidden;
-	transition: transform 0.3s ease-in-out; /* Menambahkan transisi untuk seluruh card */
+	transition: transform 0.3s ease-in-out;
 	text-align: center;
+	color: #ffffff;
 }
 
 .product-card:hover {
-	transform: scale(1.05); /* Efek zoom pada seluruh card */
+	transform: scale(1.05);
 	background-color: var(--accent-color);
+}
+
+.product-card:hover p {
+	color: var(--secondary-color);
 }
 
 .product-card img {
@@ -192,21 +213,21 @@ h2 {
 /* Tombol Beli Sekarang mengikuti lebar card */
 .product-card button {
 	display: block;
-	width: 100%; /* Mengatur tombol agar lebarnya penuh mengikuti card */
-	padding: 15px 0; /* Padding vertikal agar tombol terlihat proporsional */
+	width: 100%;
+	padding: 15px 0;
 	text-align: center;
-	background-color: var(--accent-color); /* Warna background tombol */
+	background-color: var(--accent-color);
 	color: var(--secondary-color);
-	font-size: 16px;
+	font-size: 1rem;
 	font-weight: bold;
 	border: none;
 	cursor: pointer;
 	text-transform: uppercase;
-	border-radius: 0 0 10px 10px; /* Membuat sudut bawah tombol melengkung sesuai card */
+	border-radius: 0 0 10px 10px;
 }
 
 .product-card button:hover {
-	background-color: #d9752d; /* Warna tombol saat di hover */
+	background-color: var(--accent-color-hover);
 }
 
 h3 {
@@ -308,7 +329,7 @@ header {
 	text-align: center;
 	color: var(--primary-color);
 	padding: 2rem 4rem;
-	margin-top: 1rem;
+	margin-top: 3rem;
 }
 
 .products {
@@ -320,35 +341,110 @@ header {
 	margin: 0 auto;
 }
 
-/* CSS untuk layar besar (desktop) */
-@media (min-width: 1200px) {
-	.hero-content h1 {
-		font-size: 5rem;
+@media (min-width: 1024px) and (max-width: 1439px) {
+	nav {
+		padding: 1rem 3rem;
 	}
 
-	.navbar a {
-		font-size: 1.2rem;
+	header {
+		margin-top: 1.7rem;
 	}
 
-	.product-container,
-	.about-us-container {
-		grid-template-columns: 1fr 1fr 1fr;
+	.mini-box {
+		width: 50%;
 	}
 
-	.testimoni-container {
+	.products {
 		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto auto auto;
+		justify-items: center;
+	}
+
+	.products .product-card:nth-child(7) {
+		grid-column: 1;
+	}
+
+	.products .product-card:nth-child(8) {
+		grid-column: 2;
+	}
+
+	.products .product-card p {
+		margin-bottom: 4rem;
+	}
+
+	.products .product-card {
+		position: relative;
+	}
+
+	.products .product-card button {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 }
 
 /* CSS untuk tablet */
-@media (max-width: 1199px) and (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1023px) {
+	html {
+		font-size: 14px;
+	}
+
 	nav {
-		padding: 1.5rem 2rem;
+		padding: 1rem 2rem;
+	}
+
+	.product,
+	.about,
+	.testimoni {
+		margin-top: 3rem;
+	}
+
+	.navbar {
+		display: none;
+		position: absolute;
+		top: 86px;
+		left: 0;
+		right: 0;
+		background-color: var(--background-color);
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hamburger button:hover {
+		background-color: var(--background-color);
+	}
+
+	.navbar.active {
+		display: flex;
+	}
+
+	.navbar a {
+		margin: 0.5rem 0;
+		padding: 0.4rem 0;
+	}
+
+	.contact-us-btn {
+		margin: 0.5rem 0 0;
+		width: 100%;
+	}
+
+	.hamburger {
+		display: block;
+		color: var(--accent-color);
 	}
 
 	.hero-content {
 		flex-direction: column;
 		text-align: center;
+	}
+
+	.hero-desc {
+		flex-direction: column;
+	}
+
+	.mini-box {
+		margin: 1.5rem 0;
 	}
 
 	.hero-content h1 {
@@ -359,43 +455,99 @@ header {
 		font-size: 1.2rem;
 	}
 
-	.product-container,
-	.about-us-container {
-		grid-template-columns: 1fr 1fr;
+	.testimoni-container,
+	.product-container {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto auto;
 	}
 
-	.testimoni-container {
+	.testimoni-card:nth-child(3),
+	.product-container .product-card:nth-child(3) {
+		grid-column: span 2;
+	}
+
+	.about h2 {
+		margin-bottom: 0.5rem;
+	}
+
+	.about-us-container {
+		gap: 1rem;
+	}
+
+	.about-us-card {
+		padding: 1rem 1.3rem;
+	}
+
+	.products {
 		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.products .product-card p {
+		margin-bottom: 4rem;
+	}
+
+	.products .product-card {
+		position: relative;
+	}
+
+	.products .product-card button {
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		right: 0;
 	}
 }
 
-/* CSS untuk layar kecil (mobile) */
-@media (max-width: 767px) {
-	body {
-		padding: 3rem 1rem 0 1rem;
+/* CSS mobile L */
+@media (min-width: 425px) and (max-width: 767px) {
+	html {
+		font-size: 14px;
 	}
 
 	nav {
-		flex-direction: column;
-		padding: 1rem 0.5rem;
+		padding: 1rem 2rem;
+	}
+
+	header {
+		border-radius: 10px;
+	}
+
+	section {
+		padding: 0 2rem;
 	}
 
 	.navbar {
+		display: none;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		background-color: var(--background-color);
 		flex-direction: column;
-		font-size: 1.2rem;
+		align-items: center;
+	}
+
+	.hamburger button:hover {
+		background-color: var(--background-color);
+	}
+
+	.navbar.active {
+		display: flex;
 	}
 
 	.navbar a {
-		padding-right: 0;
-		padding-bottom: 0.5rem;
+		margin: 0.5rem 0;
+		padding: 0.4rem 0;
 	}
 
-	.hero-content h1 {
-		font-size: 2rem;
+	.contact-us-btn {
+		margin: 0.5rem 0 0;
+		width: 100%;
 	}
 
-	.hero-content p {
-		font-size: 1rem;
+	.hamburger {
+		display: block;
+		color: var(--accent-color);
 	}
 
 	.hero-img-cta img {
@@ -407,7 +559,191 @@ header {
 		grid-template-columns: 1fr;
 	}
 
+	.about-us-container {
+		gap: 0.5rem;
+	}
+
 	.testimoni-container {
 		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.products {
+		gap: 3rem;
+	}
+
+	.product-card:hover {
+		transform: scale(1.05);
+		background-color: var(--background-color);
+	}
+
+	.product-card:hover p {
+		color: var(--text-color);
+	}
+
+	.hero-content {
+		flex-direction: column;
+	}
+
+	.hero-desc {
+		flex-direction: column;
+	}
+
+	.mini-box {
+		margin: 1.5rem 0;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	.logo img {
+		width: 4rem;
+	}
+
+	.hero-img-cta img {
+		display: none;
+	}
+
+	.hero-content h1 {
+		text-align: center;
+	}
+
+	.product-head a {
+		text-align: right;
+	}
+
+	.about,
+	.testimoni,
+	.product {
+		margin-top: 3rem;
+	}
+
+	.about h2 {
+		margin-bottom: 0.5rem;
+	}
+}
+
+/* CSS untuk layar kecil (mobile S and M) */
+@media (min-width: 320px) and (max-width: 424px) {
+	html {
+		font-size: 12px;
+	}
+
+	nav {
+		padding: 1rem 2rem;
+	}
+
+	header {
+		border-radius: 10px;
+	}
+
+	section {
+		padding: 0 2rem;
+	}
+
+	.navbar {
+		display: none;
+		position: absolute;
+		top: 70px;
+		left: 0;
+		right: 0;
+		background-color: var(--background-color);
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.hamburger button:hover {
+		background-color: var(--background-color);
+	}
+
+	.navbar.active {
+		display: flex;
+	}
+
+	.navbar a {
+		margin: 0.5rem 0;
+		padding: 0.4rem 0;
+	}
+
+	.contact-us-btn {
+		margin: 0.5rem 0 0;
+		width: 100%;
+	}
+
+	.hamburger {
+		display: block;
+		color: var(--accent-color);
+	}
+
+	.hero-img-cta img {
+		width: 100%;
+	}
+
+	.product-container,
+	.about-us-container {
+		grid-template-columns: 1fr;
+	}
+
+	.about-us-container {
+		gap: 0.5rem;
+	}
+
+	.testimoni-container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.products {
+		gap: 3rem;
+	}
+
+	.product-card:hover {
+		transform: scale(1.05);
+		background-color: var(--background-color);
+	}
+
+	.product-card:hover p {
+		color: var(--text-color);
+	}
+
+	.hero-content {
+		flex-direction: column;
+	}
+
+	.hero-desc {
+		flex-direction: column;
+	}
+
+	.mini-box {
+		margin: 1.5rem 0;
+	}
+
+	h1 {
+		font-size: 2rem;
+	}
+
+	.logo img {
+		width: 4rem;
+	}
+
+	.hero-img-cta img {
+		display: none;
+	}
+
+	.hero-content h1 {
+		text-align: center;
+	}
+
+	.product-head a {
+		text-align: right;
+	}
+
+	.about,
+	.testimoni,
+	.product {
+		margin-top: 3rem;
+	}
+
+	.about h2 {
+		margin-bottom: 0.5rem;
 	}
 }

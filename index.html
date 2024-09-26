@@ -12,26 +12,30 @@
 		<!-- Navbar Section -->
 		<nav>
 			<!-- <h1>Logo</h1> -->
-			<div class="logo"><img src="assets/Logo-removebg-preview.png" alt="Logo" /></div>
+			<div class="logo"><img src="assets/purelife-logo.png" alt="Logo" /></div>
+			<button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
 
-			<div class="navbar">
-				<a href="#home">Home</a>
-				<a href="#product">Product</a>
-				<a href="#about">About</a>
-				<a href="#review">Testimoni</a>
+			<div class="navbar" id="navbar">
+				<a href="index.html">Home</a>
+				<a href="produk.html">Product</a>
+				<a href="index.html">About</a>
+				<a href="index.html">Testimoni</a>
 
-				<button class="contact-us-btn" id="contact-us">Contact Us</button>
+				<button class="contact-us-btn" id="contact-us">Order Now</button>
 			</div>
 		</nav>
 
 		<!-- Hero Section -->
 		<section class="hero" id="home">
 			<div class="hero-content">
-				<h1>PURE LIFE</h1>
+				<h1>Revitalize Your Day, Naturally</h1>
 
 				<div class="hero-desc">
 					<div class="mini-box"></div>
-					<p>"Pure LIFE: Energi Alami untuk Hari-Harimu"</p>
+					<p style="text-align: justify">
+						Pure Life hadir untuk memberikan Anda kesegaran alami yang dibutuhkan tubuh setiap hari. Terbuat dari bahan-bahan alami berkualitas, nikmatilah manfaat kesehatan tanpa kompromi. Karena kami percaya, hidup sehat dimulai dari
+						pilihan yang murni.
+					</p>
 				</div>
 			</div>
 
@@ -74,7 +78,11 @@
 		<!-- About Us Section -->
 		<section class="about" id="about">
 			<h2>About Us</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur veritatis iure similique officia aut sunt quae quo, cumque repudiandae vel!</p>
+			<p style="text-align: justify">
+				<strong>Pure Life</strong> adalah usaha UMKM dadakan milik kelompok Pemweb P11 yang berfokus untuk menjual minuman kesehatan agar kalian para konsumen tidak cepat mati muda karena kebanyakan push rank ML sampai dini hari. Di Pure
+				Life, kami berkomitmen untuk menghadirkan minuman kesehatan yang mengedepankan keaslian dan kualitas terbaik. Terinspirasi dari kekayaan alam, setiap produk kami diformulasikan dengan bahan-bahan alami yang kaya nutrisi untuk
+				mendukung gaya hidup sehat dan seimbang (ini bullshit). Pure Life memiliki visi dan misi sebagai berikut:
+			</p>
 
 			<div class="about-us-container">
 				<div class="about-us-card">
@@ -98,7 +106,7 @@
 		</section>
 
 		<!-- Review Section -->
-		<section class="Testimoni" id="review">
+		<section class="testimoni" id="review">
 			<h2>Testimoni</h2>
 
 			<div class="testimoni-container">
@@ -106,24 +114,24 @@
 					<img src="assets/ristek.jpg" alt="" />
 
 					<h3>Hafiz "Ristek" Rendy</h3>
-					<h4>Pengangguran, 20 Tahun</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, magni.</p>
+					<h4>Medfo HMIT, 20 Tahun</h4>
+					<p>Pure Life benar-benar mengubah gaya hidup saya. Dengan produk <strong>Collagen Beauty Drink</strong>, saya bisa mengganti ras kulit saya menjadi ras India hitam seperti di foto.</p>
 				</div>
 
 				<div class="testimoni-card">
 					<img src="assets/epal.jpg" alt="" />
 
 					<h3>Fazrul IC Declare</h3>
-					<h4>Pengangguran, 20 Tahun</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, magni.</p>
+					<h4>23 Tahun Pengangguran</h4>
+					<p>Semenjak saya rutin meminum <strong>Sleep Well Herbal Drink</strong>, saya dapat tidur di mana saja dan kapan saja bahkan sampai susah bangun untuk kuliah.</p>
 				</div>
 
 				<div class="testimoni-card">
 					<img src="assets/sighra2.jpg" alt="" />
 
 					<h3>Sighra Dagri</h3>
-					<h4>Pengangguran, 20 Tahun</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia, magni.</p>
+					<h4>Asisten Jarkom, 25 Tahun</h4>
+					<p>Saya selalu rutin untuk meminum semua produk dari <strong>Pure Life</strong> saat mandi ataupun tidak mandi. Selain membuat tubuh saya menjadi sehat, saya merasa lebih Jawa dari sebelumnya.</p>
 				</div>
 			</div>
 		</section>
@@ -137,5 +145,14 @@
 				<a href="twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
 			</div>
 		</footer>
+
+		<script>
+			const hamburger = document.getElementById("hamburger");
+			const navbar = document.getElementById("navbar");
+
+			hamburger.addEventListener("click", () => {
+				navbar.classList.toggle("active");
+			});
+		</script>
 	</body>
 </html>

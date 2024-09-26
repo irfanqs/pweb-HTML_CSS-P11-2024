@@ -10,15 +10,16 @@
 	<body>
 		<nav>
 			<!-- <h1>Logo</h1> -->
-			<div class="logo"><img src="assets/Logo.png" alt="Logo" /></div>
+			<div class="logo"><img src="assets/purelife-logo.png" alt="Logo" /></div>
+			<button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
 
-			<div class="navbar">
+			<div class="navbar" id="navbar">
 				<a href="index.html">Home</a>
 				<a href="produk.html">Product</a>
 				<a href="index.html">About</a>
 				<a href="index.html">Testimoni</a>
 
-				<button class="contact-us-btn" id="contact-us">Contact Us</button>
+				<button class="contact-us-btn" id="contact-us">Order Now</button>
 			</div>
 		</nav>
 
@@ -93,5 +94,14 @@
 				<a href="twitter.com"><i class="fa-brands fa-x-twitter"></i></a>
 			</div>
 		</footer>
+
+		<script>
+			const hamburger = document.getElementById("hamburger");
+			const navbar = document.getElementById("navbar");
+
+			hamburger.addEventListener("click", () => {
+				navbar.classList.toggle("active");
+			});
+		</script>
 	</body>
 </html>
