@@ -4,6 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Praktikum Modul 1 - HTML CSS</title>
+		<link rel="icon" href="assets/purelife-logo.png" type="image/icon type">
 		<script src="https://kit.fontawesome.com/1f94ee29e7.js" crossorigin="anonymous"></script>
 
 		<link rel="stylesheet" href="styles.css" />
@@ -12,7 +13,7 @@
 		<!-- Navbar Section -->
 		<nav>
 			<!-- <h1>Logo</h1> -->
-			<div class="logo"><img src="assets/purelife-logo.png" alt="Logo" /></div>
+			<div class="logo"><a href="index.html"><img src="assets/purelife-logo.png" alt="Logo" /></a></div>
 			<button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
 
 			<div class="navbar" id="navbar">
@@ -21,7 +22,7 @@
 				<a href="index.html">About</a>
 				<a href="index.html">Testimoni</a>
 
-				<button class="contact-us-btn" id="contact-us">Order Now</button>
+				<button class="contact-us-btn" id="contact-us"  onclick="alert('Silahkan Menuju Ke Product Untuk Pemesanan')">Order Now</button>
 			</div>
 		</nav>
 
@@ -40,8 +41,8 @@
 			</div>
 
 			<div class="hero-img-cta">
-				<img src="https://picsum.photos/id/42/1300/480" alt="gambar" />
-				<button id="order">Order Now</button>
+				<img src="assets/Foto Landing-page.jpg" alt="gambar" />
+				<button id="order" onclick="alert('Silahkan Menuju Ke Product Untuk Pemesanan')">Order Now</button>
 			</div>
 		</section>
 
