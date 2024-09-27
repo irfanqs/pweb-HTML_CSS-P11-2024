@@ -4,7 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Praktikum Modul 1 - HTML CSS</title>
-		<link rel="icon" href="assets/purelife-logo.png" type="image/icon type">
+		<link rel="icon" href="assets/purelife-logo.png" type="image/icon type" />
 		<script src="https://kit.fontawesome.com/1f94ee29e7.js" crossorigin="anonymous"></script>
 
 		<link rel="stylesheet" href="styles.css" />
@@ -13,16 +13,18 @@
 		<!-- Navbar Section -->
 		<nav>
 			<!-- <h1>Logo</h1> -->
-			<div class="logo"><a href="index.html"><img src="assets/purelife-logo.png" alt="Logo" /></a></div>
+			<div class="logo">
+				<a href="index.html"><img src="assets/purelife-logo.png" alt="Logo" /></a>
+			</div>
 			<button class="hamburger" id="hamburger"><i class="fa-solid fa-bars"></i></button>
 
 			<div class="navbar" id="navbar">
-				<a href="index.html">Home</a>
-				<a href="produk.html">Product</a>
-				<a href="index.html">About</a>
-				<a href="index.html">Testimoni</a>
+				<a href="#home">Home</a>
+				<a href="#product">Product</a>
+				<a href="#about">About</a>
+				<a href="#review">Testimoni</a>
 
-				<button class="contact-us-btn" id="contact-us"  onclick="alert('Silahkan Menuju Ke Product Untuk Pemesanan')">Order Now</button>
+				<button class="contact-us-btn" id="contact-us" onclick="orderNow()">Order Now</button>
 			</div>
 		</nav>
 
@@ -41,8 +43,8 @@
 			</div>
 
 			<div class="hero-img-cta">
-				<img src="assets/Foto Landing-page.jpg" alt="gambar" />
-				<button id="order" onclick="alert('Silahkan Menuju Ke Product Untuk Pemesanan')">Order Now</button>
+				<img src="assets/hero-section.jpg" alt="gambar" />
+				<button id="order" onclick="orderNow()">Order Now</button>
 			</div>
 		</section>
 
@@ -154,6 +156,43 @@
 			hamburger.addEventListener("click", () => {
 				navbar.classList.toggle("active");
 			});
+
+			const navLinks = document.querySelectorAll("#navbar a");
+
+			navLinks.forEach((link) => {
+				link.addEventListener("click", () => {
+					navbar.classList.remove("active");
+				});
+			});
+
+			document.querySelectorAll(".navbar a").forEach((anchor) => {
+				anchor.addEventListener("click", function (e) {
+					const hrefValue = this.getAttribute("href");
+
+					// if (hrefValue === "produk.html") {
+					// 	return;
+					// }
+
+					if (hrefValue.startsWith("#")) {
+						e.preventDefault();
+
+						const targetElement = document.querySelector(hrefValue);
+
+						const offset = 124;
+						const elementPosition = targetElement.getBoundingClientRect().top;
+						const offsetPosition = elementPosition - offset;
+
+						window.scrollBy({
+							top: offsetPosition,
+							behavior: "smooth",
+						});
+					}
+				});
+			});
+
+			function orderNow() {
+				window.location.href = "produk.html";
+			}
 		</script>
 	</body>
 </html>
